@@ -1,0 +1,257 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --ff-primary: 'Roboto', sans-serif;
+  --text-color: #E1E1E6;
+  --bg-color: #000000;
+  --bg-header: #092D38;
+  --bg-even: rgba(6, 22, 27, 0.5);
+  --bg-odd: #4A808C;
+  --bg-remove: #F75A68;
+  --bg-button: #065E7C;
+
+  --nada-height: 65vh;
+  --nada-width: calc(var(--nada-height) / 1.5);
+}
+body {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+body * {
+  font-family: var(--ff-primary);
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;        
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #082020;    
+  border-radius: 20px;       
+  border: 3px solid transparent;  
+}
+
+
+.nada {
+  color: hsla(189, 4%, 32%, 1);
+  font-size: 4rem;
+  display: flex;
+  gap: 6rem;
+  font-weight: 700;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10rem;
+  }
+
+.remove {
+  color: var(--text-color);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+#app {
+  padding: 33.3rem;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: -10.5rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  margin: 2.5rem 0;
+}
+
+heander h1 {
+  font-size: 2rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.search input {
+  width: 64rem;
+  height: 4.8rem;
+  border-radius: 5px;
+  background-color: #06181C;
+  padding: 1.6rem;
+  border: none;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  text-transform: uppercase;
+  color: #FFFFFF;;
+
+  background-color: #3a415a;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 1.2rem 3.2rem;
+  width: 17rem;
+  height: 4.8rem;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FFFFFF;
+  color: #634fc7;
+  fill: var(--bg-button);
+}
+
+button:hover path  {
+  background-color: #FFFFFF;
+  color: #634fc7;
+  fill: #634fc7;
+}
+
+#remover {
+  background-color: transparent;
+}
+
+#remover:hover {
+  color: var(--bg-remove);
+}
+
+#remover {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+
+#remover::before,
+#remover::after {
+ content: '';
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+#remover::before {
+  background-color: var(--bg-remove);
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+#remover::after {
+  content: attr(data-replace);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: var(--bg-remove);
+}
+
+#remover:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+#remover:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  box-shadow: 0 4rem 7rem 0 rgba(255, 255, 255, 0.1);
+}
+
+table * {
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+
+table th {
+  background: #124949;
+  width: 1120px;
+  height: 64px;
+  text-align: center;  
+
+  padding: 16px 24px 16px 40px;
+
+}
+
+table th:first-child {
+  border-top-left-radius: 12px;
+}
+table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+
+table tr:nth-child(odd) {
+  background: #06181C;
+}
+table tr:nth-child(even){
+  background: #21393f;
+}
+
+table td {
+  padding: 24px 24px 24px 40px;
+  gap: 12px;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+td.user img {
+  width: 5rem;
+  height: 5rem;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+td.user a {
+  text-decoration: none;
+}
+td.user a p {
+  font-weight: bold;
+}
+
+td.remove {
+  cursor: pointer;
+}
+
+.favstar:hover path {
+  fill: goldenrod;
+}
