@@ -9,15 +9,15 @@
 
   --ff-primary: 'Roboto', sans-serif;
   --text-color: #E1E1E6;
-  --bg-color: #000000;
+  --bg-color: rgb(2, 2, 12);
   --bg-header: #092D38;
   --bg-even: rgba(6, 22, 27, 0.5);
-  --bg-odd: #4A808C;
+  --bg-odd: #517f8a;
   --bg-remove: #F75A68;
   --bg-button: #065E7C;
 
-  --nada-height: 65vh;
-  --nada-width: calc(var(--nada-height) / 1.5);
+  --empty-height: 65vh;
+  --empty-width: calc(var(--empty-height) / 1.5);
 }
 body {
   font-size: 1.6rem;
@@ -43,7 +43,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-.nada {
+.empty {
   color: hsla(189, 4%, 32%, 1);
   font-size: 4rem;
   display: flex;
@@ -114,7 +114,7 @@ button {
   text-transform: uppercase;
   color: #FFFFFF;;
 
-  background-color: #3a415a;
+  background-color: #092D38;
   font-weight: 700;
   border-radius: 5px;
   padding: 1.2rem 3.2rem;
@@ -125,15 +125,12 @@ button {
 }
 
 button:hover {
-  background-color: #FFFFFF;
-  color: #634fc7;
-  fill: var(--bg-button);
+  background-color: rgb(252, 248, 240);
+  color: #092D38;
 }
 
 button:hover path  {
-  background-color: #FFFFFF;
-  color: #634fc7;
-  fill: #634fc7;
+  fill: #092D38;
 }
 
 #remover {
@@ -186,8 +183,6 @@ button:hover path  {
 table {
   width: 100%;
   border-collapse: collapse;
-
-  box-shadow: 0 4rem 7rem 0 rgba(255, 255, 255, 0.1);
 }
 
 table * {
@@ -196,7 +191,7 @@ table * {
 }
 
 table th {
-  background: #124949;
+  background: #092D38;
   width: 1120px;
   height: 64px;
   text-align: center;  
@@ -214,10 +209,10 @@ table th:last-child {
 
 
 table tr:nth-child(odd) {
-  background: #06181C;
+  background: #06161B80;
 }
 table tr:nth-child(even){
-  background: #21393f;
+  background: #092D38;
 }
 
 table td {
